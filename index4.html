@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .box {
+        text-align: center;
+        border: 2px solid red;
+        padding: 20px;
+      }
+
+      .container {
+        display: grid;
+        height: 100vh;
+        gap: 10px;
+        background-color: lightblue;
+        /* grid-template-columns: repeat(12, 1fr); */
+        grid-template-rows: 50px auto auto auto auto 50px;
+      }
+
+      /* Tablet responsive */
+      @media only screen and (min-width: 768px) {
+        .container {
+          /* grid-template-columns: repeat(12, 1fr); */
+          /* grid-template-rows: repeat(12, 1fr); */
+          grid-template-rows: 50px auto auto auto 50px;
+          gap: 15px;
+          grid-template-areas:
+            "h h h h h"
+            "b t t m m"
+            "b t t m m"
+            "a t t m m"
+            "a f f f f";
+          /* grid-template-areas:
+            "h h h h  h h h h  h h h h"
+            "b b b b  m m m m  m m m m"
+            "b b b b  m m m m  m m m m"
+            "a a a a  m m m m  m m m m"
+            "a a a a  f f f f  f f f f"; */
+        }
+
+        .box-1 {
+          /* grid-area: header; */
+          grid-area: h;
+        }
+
+        .box-2 {
+          grid-area: b;
+        }
+
+        .box-3 {
+          grid-area: m;
+        }
+
+        .box-4 {
+          grid-area: a;
+        }
+
+        .box-5 {
+          grid-area: t;
+        }
+
+        .box-6 {
+          grid-area: f;
+        }
+      }
+
+      /* Desktop responsive */
+      @media only screen and (min-width: 1080px) {
+        .container {
+          /* grid-template-columns: repeat(12, 1fr); */
+          /* grid-template-rows: repeat(12, 1fr); */
+          grid-template-rows: 100px auto auto auto 100px;
+          gap: 20px;
+          grid-template-areas:
+            "h h h h h"
+            "b t m m a"
+            "b t m m a"
+            "b t m m a"
+            "f f f f a";
+          /* grid-template-areas:
+            "h h h h  h h h h  h h h h"
+            "b b b b  m m m m  m m m m"
+            "b b b b  m m m m  m m m m"
+            "a a a a  m m m m  m m m m"
+            "a a a a  f f f f  f f f f"; */
+        }
+
+        .box-1 {
+          /* grid-area: header; */
+          grid-area: h;
+        }
+
+        .box-2 {
+          grid-area: b;
+        }
+
+        .box-3 {
+          grid-area: m;
+        }
+
+        .box-4 {
+          grid-area: a;
+        }
+
+        .box-5 {
+          grid-area: t;
+        }
+
+        .box-6 {
+          grid-area: f;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="box box-1">Header (1)</header>
+      <section class="box box-2">Blog (2)</section>
+      <main class="box box-3">Main (3)</main>
+      <aside class="box box-4">Aside (4)</aside>
+      <div class="box box-5">Box 5 (5)</div>
+      <footer class="box box-6">Footer (6)</footer>
+    </div>
+  </body>
+</html>
